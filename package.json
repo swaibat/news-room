@@ -3,6 +3,26 @@
   "version": "1.0.0",
   "description": "News room react app",
   "main": "index.js",
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporters",
+        {
+          "publicPath": "./html-report",
+          "filename": "report.html",
+          "expand": true
+        }
+      ]
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "json",
+      "text",
+      "html"
+    ]
+  },
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
@@ -38,6 +58,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^4.5.0",
     "jest": "^26.6.3",
+    "jest-html-reporters": "^2.1.1",
     "prettier": "^2.2.1",
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0",
@@ -47,7 +68,10 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "axios": "^0.21.0",
+    "javascript-time-ago": "^2.3.3",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   }
 }
