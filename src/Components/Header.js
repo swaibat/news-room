@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import Register from './Register';
 
 const Header = () => (
 	<div className='shadow-sm mb-4 bg-white'>
@@ -19,12 +20,7 @@ const Header = () => (
 					</li>
 				</ul>
 				<div className='ml-auto'>
-					<NavLink className='btn btn-primary' to='/register'>
-						Register
-					</NavLink>
-					<NavLink className='btn btn-outline-primary ml-3' to='/login'>
-						Login
-					</NavLink>
+					<Register />
 				</div>
 			</div>
 		</nav>

@@ -5,10 +5,11 @@
 	},
 	"extends": ["plugin:react/recommended", "airbnb", "prettier", "prettier/react"],
 	"parserOptions": {
-		"ecmaVersion": 2016
+		"ecmaVersion": 2018
 	},
 	"plugins": ["react", "prettier"],
 	"rules": {
+		"no-unused-expressions": "off",
 		"react/jsx-filename-extension": [0],
 		"prettier/prettier": "error"
 	}

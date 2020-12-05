@@ -2,6 +2,7 @@ const path = require('path');
 require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
 	entry: path.resolve(__dirname, './src/index.js'),
@@ -27,6 +28,10 @@ module.exports = {
 				viewport: 'width=device-width, initial-scale=1.0',
 				charset: 'UTF-8',
 			},
+		}),
+		new Dotenv({
+			path: './.env',
+			safe: true,
 		}),
 	],
 };
