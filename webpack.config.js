@@ -2,12 +2,14 @@ const path = require('path');
 require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
 	entry: path.resolve(__dirname, './src/index.js'),
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: '[name].[contenthash].js',
+		publicPath: '/',
 	},
 	module: {
 		rules: [
@@ -18,6 +20,9 @@ module.exports = {
 			},
 		],
 	},
+	devServer: {
+		historyApiFallback: true,
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'News Room App',
@@ -27,6 +32,10 @@ module.exports = {
 				viewport: 'width=device-width, initial-scale=1.0',
 				charset: 'UTF-8',
 			},
+		}),
+		new Dotenv({
+			path: './.env',
+			safe: true,
 		}),
 	],
 };
