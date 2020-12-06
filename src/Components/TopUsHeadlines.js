@@ -3,9 +3,10 @@ import PreLoader from './PreLoader';
 import NoArticles from './NotArticles';
 import UseNews from './UseNews';
 import TopUsArticle from './TopUsArticle';
+import ErrorMessage from './ErrorMessage';
 
 const BusinessHeadlines = () => {
-	const { news, loading } = UseNews('country=us');
+	const { news, loading, errors } = UseNews('top-headlines?country=us');
 	return (
 		<div className='col-md-9'>
 			<div className='card'>
@@ -13,7 +14,8 @@ const BusinessHeadlines = () => {
 				<div className='card-body row'>
 					<TopUsArticle news={news} />
 					{!loading && !news.length && <NoArticles />}
-					{loading && <PreLoader />}
+					{loading && !errors && <PreLoader />}
+					{errors && <ErrorMessage errors={errors} />}
 				</div>
 			</div>
 		</div>

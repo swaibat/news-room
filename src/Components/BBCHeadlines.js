@@ -5,7 +5,7 @@ import UseNews from './UseNews';
 import BBCArticle from './BBCArticle';
 
 const BbcHeadlines = () => {
-	const { news, loading } = UseNews('sources=bbc-news');
+	const { news, loading, errors } = UseNews('top-headlines?sources=bbc-news');
 	return (
 		<div className='col-md-3'>
 			<div className='card'>
@@ -14,7 +14,7 @@ const BbcHeadlines = () => {
 					<ul className='list-group list-group-flush'>
 						<BBCArticle news={news} />
 						{!loading && !news.length && <NoArticles />}
-						{loading && <PreLoader />}
+						{loading && !errors && <PreLoader />}
 					</ul>
 				</div>
 			</div>

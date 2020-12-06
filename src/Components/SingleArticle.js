@@ -4,8 +4,8 @@ import timeAgo from '../Helpers/TimeAgo';
 import convertToSlug from '../Helpers/MakeSlug';
 
 const TopUsArticle = ({ news }) => {
-	return news.map((article, index) => (
-		<div className={`col-md-${!index ? '12' : '4'} mb-3`} key={article.title}>
+	return news.map((article) => (
+		<div className='col-md-4' key={article.title}>
 			<div className='headline-img-holder'>
 				<img src={article.urlToImage} alt={article.title} />
 			</div>
