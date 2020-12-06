@@ -1,6 +1,6 @@
-/* eslint-disable no-unused-expressions */
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
+import { NavLink, Redirect } from 'react-router-dom';
 import UseRegister from './UseRegister';
 
 const Register = () => {
@@ -9,17 +9,26 @@ const Register = () => {
 		<>
 			{user ? (
 				<>
-					<button type='button' className='btn btn-outline-primary'>
-						{user.username}
-					</button>
-					<button type='button' className='btn btn-outline-secondary ml-3' onClick={logOut}>
-						Logout
-					</button>
+					<div className='d-flex'>
+						<NavLink className='btn btn-outline-primary' activeClassName='active' to='/news'>
+							{user.preference} News
+						</NavLink>
+						<button type='button' className='btn btn-outline-primary ml-3'>
+							{user.username}
+						</button>
+						<button type='button' className='btn btn-outline-secondary ml-3' onClick={logOut}>
+							Logout
+						</button>
+					</div>
+					<Redirect to='/news' />
 				</>
 			) : (
-				<button type='button' className='btn btn-primary' onClick={showModal}>
-					Register
-				</button>
+				<>
+					<Redirect to='/' />
+					<button type='button' className='btn btn-primary' onClick={showModal}>
+						Register
+					</button>
+				</>
 			)}
 			<Modal show={isOpen} onHide={hideModal}>
 				<form>
