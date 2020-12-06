@@ -5,23 +5,22 @@ import convertToSlug from '../Helpers/MakeSlug';
 
 const TopUsArticle = ({ news }) => {
 	return news.map((article) => (
-		<div className='col-md-4' key={article.title}>
+		<Link
+			className='col-md-4'
+			to={{
+				pathname: `/news/${convertToSlug(article.title)}`,
+				state: article,
+			}}
+			key={article.title}
+		>
 			<div className='headline-img-holder'>
 				<img src={article.urlToImage} alt={article.title} />
 			</div>
 			<div className='py-2 d-flex flex-column'>
-				<Link
-					className='text-primary mb-0'
-					to={{
-						pathname: `/news/${convertToSlug(article.title)}`,
-						state: article,
-					}}
-				>
-					{article.title}
-				</Link>
+				<p className='text-primary mb-0'>{article.title}</p>
 				<small className='text-muted'>{timeAgo.format(new Date(article.publishedAt))}</small>
 			</div>
-		</div>
+		</Link>
 	));
 };
 

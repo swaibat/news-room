@@ -16,6 +16,6 @@ const renderCard = (news) => {
 describe('should test user role card component', () => {
 	it('Should render', () => {
 		const wrapper = renderCard(Data);
-		expect(wrapper.find('li').length).toEqual(1);
+		expect(wrapper.find('.list-group-item').length).toEqual(1);
 	});
 });
