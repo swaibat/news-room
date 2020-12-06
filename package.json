@@ -24,7 +24,7 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "serve -s ./dist",
     "build": "webpack --mode production",
     "test": "jest"
   },

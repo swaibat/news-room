@@ -4,10 +4,12 @@ require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
+process.env.NODE_ENV = 'production';
+
 module.exports = {
 	entry: path.resolve(__dirname, './src/index.js'),
 	output: {
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'src'),
 		filename: '[name].[contenthash].js',
 		publicPath: '/',
 	},
@@ -19,9 +21,6 @@ module.exports = {
 				use: ['style-loader', 'css-loader', 'sass-loader'],
 			},
 		],
-	},
-	devServer: {
-		historyApiFallback: true,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
