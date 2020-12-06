@@ -4,7 +4,6 @@
 
 News Room App is A ReactJS app for fetching news from  [newsapi.org](https://newsapi.org/) that enebales users to :
 
-
 - Get News detail with image
 - Visit Link to open original news
 - Have 3 web navigation view at home and it will show a list about:
@@ -15,10 +14,13 @@ News Room App is A ReactJS app for fetching news from  [newsapi.org](https://new
 keyword selection from bitcoin, Apple, earthquake, animal. User can only choose
 one keyword)
 
+
+
 ## Table of Contents
 - [File structure](#File-structure)
 - [Installation](#Installation)
 - [Usage](#Usage)
+- [Stacks](#Stacks)
 - [Author details](#Author)
 
 ## File-structure
@@ -38,6 +40,19 @@ one keyword)
 ## Usage
 
 I have put up a small video tutorial to keep you up to speed with how the application can be used
+
+## Stacks
+i have used differen stacks to acheive this
+
+## Develop
+- ReactJs
+- Webpack
+- Bootstrap
+
+## Testing
+
+- jest
+- Enzyme
 
 ## Author
 [Rumbiiha Swaibu](https://github.com/swaibat)
