@@ -11,7 +11,7 @@ const localStore = {
 	},
 	setPreference() {
 		const user = this.getUser();
-		return user ? `q=${user.preference}&` : '';
+		return user ? `q=${user.preference}` : '';
 	},
 };
 
